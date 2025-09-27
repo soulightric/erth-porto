@@ -1,0 +1,398 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+
+/* Header */
+header {
+    background-color: rgba(18, 18, 18, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #ffffff;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    transition: transform 0.3s ease; /* Animation for hide/show */
+}
+header.hide-nav {
+    transform: translateY(-100%); /* Slide up to hide */
+}
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+}
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.nav-left h1 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+.nav-left img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 16px;
+    width: auto;
+    min-width: 200px;
+    background-color: rgba(18, 18, 18, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 16px;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.nav-menu.active {
+    display: flex;
+}
+.nav-menu li {
+    list-style: none;
+    padding: 8px 0;
+}
+.nav-menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+}
+.nav-menu a:hover {
+    text-decoration: underline;
+}
+.menu-btn {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+}
+.menu-btn svg {
+    width: 24px;
+    height: 24px;
+}
+@media (min-width: 640px) {
+    .nav-left h1 {
+        font-size: 24px;
+    }
+    .menu-btn {
+        display: none;
+    }
+    .nav-menu {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        background: none;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        padding: 0;
+        box-shadow: none;
+        gap: 24px;
+    }
+    .nav-menu li {
+        padding: 0;
+    }
+}
+
+/* Hero Section */
+#home {
+    /* background-color: transparent; */
+    color: #ffffff;
+    padding: 48px 16px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-top: 0; /* Ensure no gap above hero */
+    /* min-height: 60vh; */
+}
+
+#home::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: inherit;
+    filter: blur(10px);
+    z-index: -1;
+    opacity: 0.7;
+}
+#neuron-canvas {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.5;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.hero-content h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 24px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* About Section */
+#about {
+    padding: 30px 16px;
+    text-align: center;
+}
+#about h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 32px;
+}
+#about p {
+    font-size: 16px;
+    max-width: 400px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Waifu Section */
+#waifu {
+    padding: 48px 16px;
+    text-align: center;
+}
+#waifu h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 32px;
+}
+#waifu img {
+    max-width: 15%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Section */
+#contact {
+    padding: 48px 16px;
+    text-align: center;
+}
+#contact h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 32px;
+}
+.contact-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #4b5563;
+    border-radius: 4px;
+    background-color: #1f2937;
+    color: #ffffff;
+    font-size: 14px;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #9ca3af;
+}
+.contact-form textarea {
+    min-height: 100px;
+}
+.contact-form button {
+    background-color: #1d4ed8;
+    color: #ffffff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 14px;
+}
+.contact-form button:hover {
+    background-color: #1e40af;
+}
+/* Footer */
+footer {
+    background-color: #00ffaa;
+    color: #ffffff;
+    padding: 16px;
+    text-align: center;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 0;
+    color: #000000;
+    font-weight: bold;
+}
+
+/* Media Queries untuk Responsivitas */
+@media (min-width: 600px) {
+    nav h1 {
+        font-size: 24px;
+    }
+    #menu-toggle {
+        display: none;
+    }
+    .nav-menu {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        background: none;
+        padding: 0;
+    }
+    .nav-menu li {
+        padding: 0 16px;
+    }
+    #home {
+        padding: 80px 24px;
+    }
+    .hero-content h2 {
+        font-size: 36px;
+    }
+    .hero-content p {
+        font-size: 20px;
+    }
+    .hero-content a {
+        padding: 12px 24px;
+    }
+    #about {
+        padding: 40px 24px;
+    }
+    #about h2 {
+        font-size: 30px;
+    }
+    #about p {
+        font-size: 16px;
+        max-width: 800px;
+    }
+
+    #waifu {
+        padding: 64px 24px;
+    }
+    #waifu h2 {
+        font-size: 30px;
+    }
+    #waifu img {
+        max-width: 50%;
+        height: auto;
+    }
+
+    #contact {
+        padding: 64px 24px;
+    }
+    #contact h2 {
+        font-size: 30px;
+    }
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form button {
+        font-size: 16px;
+    }
+    .contact-form button {
+        width: auto;
+        padding: 12px 24px;
+    }
+    footer {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 200px) {
+    #home {
+        padding: 64px 20px;
+    }
+    .hero-content h2 {
+        font-size: 32px;
+    }
+    .hero-content p {
+        font-size: 20px;
+    }
+    #about {
+        padding: 40px 20px;
+    }
+    #about h2 {
+        font-size: 28px;
+    }
+    #about p {
+        font-size: 16px;
+        max-width: 600px;
+    }
+    #waifu {
+        padding: 64px 20px;
+    }
+    #waifu h2 {
+        font-size: 28px;
+    }
+    #waifu img {
+        max-width: 40%;
+        height: auto;
+    }
+    #contact {
+        padding: 64px 20px;
+    }
+    #contact h2 {
+        font-size: 28px;
+    }
+    
+}
+
+@media (min-width: 1024px) {
+    .hero-content h2 {
+        font-size: 48px;
+    }
+    .hero-content p {
+        font-size: 24px;
+    }
+    .project-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    #about p {
+        font-size: 18px;
+        max-width: 1000px;
+    }
+    #waifu img {
+        max-width: 30%;
+        height: auto;
+    }
+}
+@media (max-width: 640px) {
+    #home::before {
+        filter: blur(5px);
+    }
+}}
