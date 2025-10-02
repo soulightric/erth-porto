@@ -186,16 +186,16 @@ header.hide-nav {
 }
 
 /* Waifu Section */
-#dream {
+.dream {
     padding: 48px 16px;
     text-align: center;
 }
-#dream h2 {
+.dream h2 {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 32px;
 }
-#dream img {
+.dream img {
     max-width: 40%;
     height: auto;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -369,13 +369,13 @@ footer p {
         max-width: 800px;
     }
 
-    #dream {
+    .dream {
         padding: 64px 24px;
     }
-    #dream h2 {
+    .dream h2 {
         font-size: 30px;
     }
-    #dream img {
+    .dream img {
         max-width: 40%;
         height: auto;
     }
