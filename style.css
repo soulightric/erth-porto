@@ -208,6 +208,10 @@ header.hide-nav {
     margin: auto;
 }
 
+#timelines {
+    padding: 48px 16px;
+}
+
 #timelines h2 {
     font-size: 24px;
     font-weight: bold;
