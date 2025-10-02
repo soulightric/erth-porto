@@ -186,19 +186,18 @@ header.hide-nav {
 }
 
 /* Waifu Section */
-#waifu {
+#dream {
     padding: 48px 16px;
     text-align: center;
 }
-#waifu h2 {
+#dream h2 {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 32px;
 }
-#waifu img {
-    max-width: 15%;
+#dream img {
+    max-width: 40%;
     height: auto;
-    border-radius: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -214,7 +213,6 @@ header.hide-nav {
     font-weight: bold;
     margin-bottom: 5px;
     text-align: center;
-    margin-top: 20px;
 }
 
 .container {
@@ -371,14 +369,14 @@ footer p {
         max-width: 800px;
     }
 
-    #waifu {
+    #dream {
         padding: 64px 24px;
     }
-    #waifu h2 {
+    #dream h2 {
         font-size: 30px;
     }
-    #waifu img {
-        max-width: 50%;
+    #dream img {
+        max-width: 40%;
         height: auto;
     }
 
@@ -422,16 +420,6 @@ footer p {
         font-size: 16px;
         max-width: 600px;
     }
-    #waifu {
-        padding: 64px 20px;
-    }
-    #waifu h2 {
-        font-size: 28px;
-    }
-    #waifu img {
-        max-width: 40%;
-        height: auto;
-    }
     #contact {
         padding: 64px 20px;
     }
@@ -455,11 +443,8 @@ footer p {
         font-size: 18px;
         max-width: 1000px;
     }
-    #waifu img {
-        max-width: 30%;
-        height: auto;
-    }
 }
+
 @media (max-width: 640px) {
     #home::before {
         filter: blur(5px);
