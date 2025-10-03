@@ -221,7 +221,7 @@ header.hide-nav {
 
 .container {
     padding: 10px 50px;
-    position: relative;
+    position: relative; 
     width: 50%;
 }
 
