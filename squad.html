@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link class="circular-favicon" rel="icon" href="assets/img/nihon.png" type="image/x-icon">
+    <title>Squad SBD - IMK</title>
     <style>
         body {
             background-color: #121212;
@@ -14,10 +15,17 @@
             text-align: center;
         }
         .flex-container {
-        display: flex;
-        justify-content: center; /* Centers horizontally */
-        align-items: center;    /* Centers vertically */
-        height: 80vh;          /* Example: Takes full viewport height */
+            display: flex;
+            justify-content: center; /* Centers horizontally */
+            align-items: center;    /* Centers vertically */
+            height: 80vh;          /* Example: Takes full viewport height */
+        }
+        
+        .circular-favicon {
+            border-radius: 50%;
+            /* Optionally, you might need to set width and height if the image isn't perfectly square or if you want to control its displayed size */
+            width: 32px;
+            height: 32px;
         }
     </style>
 </head>
