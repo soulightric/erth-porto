@@ -65,7 +65,6 @@ header.hide-nav {
     width: auto;
     /* min-width: 200px; */
     background-color: #121212;
-    /* background-color: rgba(18, 18, 18, 0.7); */
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     padding: 16px;
