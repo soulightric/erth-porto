@@ -1,8 +1,16 @@
+ @font-face {
+        font-family: 'Vactory-sans';
+        src: url('/public/fonts/VactorySansRegular-drrAV.ttf') format('tff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    /* font-family: Arial, sans-serif; #default*/
+    font-family: Vactory-sans, sans-serif; 
 }
 
 body {
