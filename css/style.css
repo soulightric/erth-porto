@@ -182,6 +182,13 @@ header.hide-nav {
     text-align: center;
     margin-top: 20px;
 }
+#about img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    padding: 40px;
+}
+
 #about h2 {
     font-size: 24px;
     font-weight: bold;
@@ -346,7 +353,6 @@ footer p {
         font-size: 16px;
         max-width: 800px;
     }
-
     .dream {
         padding: 64px 24px;
     }
