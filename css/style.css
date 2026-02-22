@@ -239,7 +239,7 @@ header.hide-nav {
 }
 
 #timelines h2 {
-    font-size: 24px;
+    font-size: 35px;
     font-weight: bold;
     margin-bottom: 5px;
     text-align: center;
@@ -386,7 +386,7 @@ footer p {
 
 @media (min-width: 200px) {
     #home {
-        padding: 64px 20px;
+        padding: 218px 20px;
     }
     .hero-content h2 {
         font-size: 32px;
