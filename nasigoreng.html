@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nasi Goreng — Panduan Lengkap</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #FDF6EC;
+      --brown-dark: #2C1A0E;
+      --brown-mid: #6B3A1F;
+      --orange: #D4621A;
+      --orange-light: #E8894A;
+      --gold: #C89B3C;
+      --text: #3A2010;
+      --muted: #9A7055;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--cream);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      background: var(--brown-dark);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 60px 24px;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 110%, rgba(212,98,26,0.45) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 20% 20%, rgba(200,155,60,0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-tag {
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.2s forwards;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.5rem, 10vw, 8rem);
+      font-weight: 700;
+      color: var(--cream);
+      line-height: 1;
+      letter-spacing: -2px;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.4s forwards;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--orange-light);
+    }
+
+    .hero-sub {
+      margin-top: 28px;
+      font-size: 1.05rem;
+      color: rgba(253,246,236,0.6);
+      max-width: 480px;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.6s forwards;
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 40px;
+      margin-top: 56px;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.8s forwards;
+    }
+
+    .hero-meta-item {
+      text-align: center;
+    }
+
+    .hero-meta-item .val {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--cream);
+      line-height: 1;
+    }
+
+    .hero-meta-item .lbl {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .hero-divider {
+      width: 1px;
+      background: rgba(255,255,255,0.15);
+      align-self: stretch;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(253,246,236,0.35);
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      opacity: 0;
+      animation: fadeUp 1s 1.2s forwards;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(253,246,236,0.4), transparent);
+      animation: scrollPulse 2s 1.5s infinite;
+    }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section { padding: 80px 0; }
+
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--brown-dark);
+    }
+
+    /* ── INTRO ── */
+    .intro {
+      background: var(--cream);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      margin-top: 48px;
+    }
+
+    .intro-text p {
+      color: var(--muted);
+      margin-bottom: 16px;
+      font-size: 1.05rem;
+    }
+
+    .intro-card {
+      background: var(--brown-dark);
+      border-radius: 4px;
+      padding: 40px;
+      color: var(--cream);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .intro-card::before {
+      content: '';
+      position: absolute;
+      bottom: -30px; right: -30px;
+      width: 150px; height: 150px;
+      border-radius: 50%;
+      background: rgba(212,98,26,0.2);
+    }
+
+    .intro-card .big-emoji {
+      font-size: 3.5rem;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .intro-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      color: var(--gold);
+    }
+
+    .intro-card p {
+      font-size: 0.9rem;
+      color: rgba(253,246,236,0.7);
+      line-height: 1.8;
+    }
+
+    /* ── BAHAN ── */
+    .bahan-section {
+      background: var(--brown-dark);
+      color: var(--cream);
+    }
+
+    .bahan-section .section-title {
+      color: var(--cream);
+    }
+
+    .bahan-section .section-label {
+      color: var(--gold);
+    }
+
+    .bahan-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 48px;
+    }
+
+    .bahan-group {
+      background: rgba(255,255,255,0.04);
+      padding: 32px;
+      transition: background 0.3s;
+    }
+
+    .bahan-group:hover { background: rgba(255,255,255,0.08); }
+
+    .bahan-group h4 {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--orange-light);
+      margin-bottom: 20px;
+    }
+
+    .bahan-group ul {
+      list-style: none;
+    }
+
+    .bahan-group ul li {
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.9rem;
+      color: rgba(253,246,236,0.75);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .bahan-group ul li .qty {
+      color: var(--gold);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* ── LANGKAH ── */
+    .langkah-section {
+      background: var(--cream);
+    }
+
+    .steps {
+      margin-top: 56px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 32px;
+      padding: 40px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.07);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s, transform 0.6s;
+    }
+
+    .step.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      color: rgba(0,0,0,0.07);
+      line-height: 1;
+      font-weight: 700;
+      text-align: right;
+      padding-top: 4px;
+    }
+
+    .step-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--brown-dark);
+      margin-bottom: 8px;
+    }
+
+    .step-content p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .step-tip {
+      display: inline-block;
+      margin-top: 12px;
+      background: rgba(212,98,26,0.1);
+      color: var(--orange);
+      font-size: 0.8rem;
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-weight: 500;
+    }
+
+    /* ── TIPS ── */
+    .tips-section {
+      background: #F5EDE0;
+    }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .tip-card {
+      background: var(--cream);
+      border-radius: 2px;
+      padding: 32px;
+      border-left: 3px solid var(--orange);
+      transition: transform 0.2s;
+    }
+
+    .tip-card:hover { transform: translateX(4px); }
+
+    .tip-card .tip-icon { font-size: 1.6rem; margin-bottom: 14px; }
+
+    .tip-card h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--brown-dark);
+      margin-bottom: 8px;
+    }
+
+    .tip-card p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    /* ── VARIASI ── */
+    .variasi-section {
+      background: var(--cream);
+    }
+
+    .variasi-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 48px;
+    }
+
+    .variasi-item {
+      border: 1px solid rgba(0,0,0,0.1);
+      padding: 28px 24px;
+      border-radius: 2px;
+      transition: border-color 0.2s, background 0.2s;
+      cursor: default;
+    }
+
+    .variasi-item:hover {
+      border-color: var(--orange);
+      background: rgba(212,98,26,0.03);
+    }
+
+    .variasi-item .vi-icon { font-size: 2rem; margin-bottom: 12px; }
+
+    .variasi-item h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--brown-dark);
+      margin-bottom: 6px;
+    }
+
+    .variasi-item p {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--brown-dark);
+      color: rgba(253,246,236,0.4);
+      text-align: center;
+      padding: 48px 24px;
+    }
+
+    footer .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--cream);
+      margin-bottom: 12px;
+    }
+
+    footer p { font-size: 0.82rem; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; transform: scaleY(1); }
+      50% { opacity: 0.8; transform: scaleY(1.15); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 700px) {
+      .intro-grid,
+      .bahan-grid,
+      .tips-grid,
+      .variasi-list { grid-template-columns: 1fr; }
+      .step { grid-template-columns: 48px 1fr; gap: 16px; }
+      .step-num { font-size: 2.5rem; }
+      .hero-meta { gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-tag">Resep Warisan Nusantara</p>
+    <h1>Nasi<br><em>Goreng</em></h1>
+    <p class="hero-sub">Panduan lengkap memasak nasi goreng rumahan yang lezat, harum, dan autentik dari dapur Indonesia.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="val">20'</span>
+        <span class="lbl">Persiapan</span>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-meta-item">
+        <span class="val">15'</span>
+        <span class="lbl">Memasak</span>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-meta-item">
+        <span class="val">2–3</span>
+        <span class="lbl">Porsi</span>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-meta-item">
+        <span class="val">Mudah</span>
+        <span class="lbl">Tingkat</span>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <div class="scroll-line"></div>
+      scroll
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="intro">
+    <div class="container">
+      <p class="section-label">Tentang Masakan</p>
+      <h2 class="section-title">Ikon Kuliner<br>Indonesia</h2>
+      <div class="intro-grid">
+        <div class="intro-text">
+          <p>Nasi goreng adalah salah satu hidangan paling ikonik di Indonesia, diakui secara internasional sebagai salah satu makanan terenak di dunia versi CNN Travel.</p>
+          <p>Kunci kelezatannya terletak pada nasi sisa semalam yang teksturnya lebih kering, bumbu halus yang ditumis sempurna, dan api besar yang menciptakan aroma <em>wok hei</em> yang khas.</p>
+          <p>Resep ini mengikuti tradisi rumahan yang sederhana namun penuh cita rasa — cocok untuk sarapan, makan siang, maupun malam.</p>
+        </div>
+        <div class="intro-card">
+          <div class="big-emoji">🍳</div>
+          <h3>Rahasia Utama</h3>
+          <p>Gunakan nasi yang sudah didinginkan semalaman di kulkas. Nasi segar terlalu lembek dan akan menggumpal saat digoreng. Nasi dingin menghasilkan tekstur yang butiran, tidak lengket, dan mudah menyerap bumbu.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BAHAN-BAHAN -->
+  <section class="bahan-section">
+    <div class="container">
+      <p class="section-label">Daftar Belanja</p>
+      <h2 class="section-title">Bahan-Bahan</h2>
+      <div class="bahan-grid">
+        <div class="bahan-group">
+          <h4>Bahan Utama</h4>
+          <ul>
+            <li>Nasi putih <span class="qty">3 piring</span></li>
+            <li>Telur ayam <span class="qty">2 butir</span></li>
+            <li>Ayam / udang <span class="qty">150 g</span></li>
+            <li>Minyak goreng <span class="qty">3 sdm</span></li>
+          </ul>
+        </div>
+        <div class="bahan-group">
+          <h4>Bumbu Halus</h4>
+          <ul>
+            <li>Bawang merah <span class="qty">5 siung</span></li>
+            <li>Bawang putih <span class="qty">3 siung</span></li>
+            <li>Cabai merah <span class="qty">3 buah</span></li>
+            <li>Terasi <span class="qty">½ sdt</span></li>
+          </ul>
+        </div>
+        <div class="bahan-group">
+          <h4>Pelengkap & Bumbu</h4>
+          <ul>
+            <li>Kecap manis <span class="qty">2 sdm</span></li>
+            <li>Garam <span class="qty">secukupnya</span></li>
+            <li>Merica bubuk <span class="qty">½ sdt</span></li>
+            <li>Daun bawang <span class="qty">2 batang</span></li>
+            <li>Tomat & timun <span class="qty">secukupnya</span></li>
+            <li>Kerupuk udang <span class="qty">secukupnya</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LANGKAH-LANGKAH -->
+  <section class="langkah-section">
+    <div class="container">
+      <p class="section-label">Cara Memasak</p>
+      <h2 class="section-title">Langkah demi<br>Langkah</h2>
+      <div class="steps">
+
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-content">
+            <h3>Siapkan Semua Bahan</h3>
+            <p>Haluskan bawang merah, bawang putih, cabai, dan terasi menggunakan ulekan atau blender. Potong daging ayam atau kupas udang. Iris daun bawang. Pastikan nasi sudah dalam kondisi dingin dan butiran terpisah.</p>
+            <span class="step-tip">💡 Gunakan nasi sisa semalam</span>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-content">
+            <h3>Panaskan Wajan</h3>
+            <p>Panaskan wajan atau wok dengan api besar hingga benar-benar panas. Masukkan minyak goreng, lalu tumis bumbu halus hingga harum dan matang — sekitar 3–4 menit. Jangan terlalu rendah apinya.</p>
+            <span class="step-tip">🔥 Api besar = aroma wok hei</span>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-content">
+            <h3>Masak Daging & Telur</h3>
+            <p>Masukkan potongan ayam atau udang, masak hingga berubah warna. Geser ke pinggir wajan, lalu pecahkan telur di tengah wajan. Orak-arik telur setengah matang, kemudian campur dengan daging.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">04</div>
+          <div class="step-content">
+            <h3>Masukkan Nasi</h3>
+            <p>Masukkan nasi ke dalam wajan. Aduk cepat dan merata agar semua butiran nasi terlumuri bumbu. Gunakan spatula untuk memecah gumpalan. Tekan-tekan nasi ke permukaan wajan agar sedikit kecokelatan.</p>
+            <span class="step-tip">🍚 Aduk terus agar tidak gosong</span>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">05</div>
+          <div class="step-content">
+            <h3>Bumbui dan Selesaikan</h3>
+            <p>Tambahkan kecap manis, garam, dan merica. Aduk hingga merata dan warna nasi menjadi kecokelatan cantik. Masukkan irisan daun bawang, aduk sebentar lalu angkat dari api.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">06</div>
+          <div class="step-content">
+            <h3>Sajikan Selagi Panas</h3>
+            <p>Pindahkan nasi goreng ke piring saji. Hiasi dengan irisan tomat, timun, kerupuk udang, dan telur mata sapi jika diinginkan. Sajikan segera selagi panas untuk cita rasa terbaik.</p>
+            <span class="step-tip">🍽️ Sajikan langsung untuk hasil terbaik</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TIPS -->
+  <section class="tips-section">
+    <div class="container">
+      <p class="section-label">Rahasia Dapur</p>
+      <h2 class="section-title">Tips & Trik</h2>
+      <div class="tips-grid">
+        <div class="tip-card">
+          <div class="tip-icon">🌾</div>
+          <h4>Pilih Nasi yang Tepat</h4>
+          <p>Nasi pera (varietas seperti pandan wangi atau rojo lele) lebih ideal karena lebih kering. Hindari nasi pulen yang terlalu lengket saat digoreng.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">🔥</div>
+          <h4>Api Harus Besar</h4>
+          <p>Api besar menghasilkan efek "wok hei" — aroma khas masakan wajan panas yang tidak bisa ditiru dengan api kecil. Ini adalah kunci perbedaan nasi goreng biasa dengan yang istimewa.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">⏱️</div>
+          <h4>Jangan Terlalu Lama</h4>
+          <p>Proses menggoreng nasi idealnya hanya 5–7 menit setelah bumbu matang. Terlalu lama akan membuat nasi kering dan keras, kehilangan tekstur yang ideal.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">🥚</div>
+          <h4>Teknik Telur</h4>
+          <p>Untuk telur yang lebih kaya rasa, campurkan telur langsung dengan nasi sebelum digoreng (dikocok dulu), sehingga setiap butiran nasi terlapis telur.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VARIASI -->
+  <section class="variasi-section">
+    <div class="container">
+      <p class="section-label">Eksplorasi Rasa</p>
+      <h2 class="section-title">Variasi Nasi Goreng</h2>
+      <div class="variasi-list">
+        <div class="variasi-item">
+          <div class="vi-icon">🦐</div>
+          <h4>Nasi Goreng Seafood</h4>
+          <p>Campuran udang, cumi, dan kerang dengan tambahan saus tiram untuk cita rasa laut yang kaya.</p>
+        </div>
+        <div class="variasi-item">
+          <div class="vi-icon">🐄</div>
+          <h4>Nasi Goreng Kambing</h4>
+          <p>Menggunakan daging kambing dengan rempah khas seperti jintan dan kayu manis untuk aroma yang kuat.</p>
+        </div>
+        <div class="variasi-item">
+          <div class="vi-icon">🌿</div>
+          <h4>Nasi Goreng Vegetarian</h4>
+          <p>Tanpa daging, menggunakan tahu, tempe, dan berbagai sayuran segar yang bergizi tinggi.</p>
+        </div>
+        <div class="variasi-item">
+          <div class="vi-icon">🍖</div>
+          <h4>Nasi Goreng Pete</h4>
+          <p>Penambahan pete memberikan aroma khas dan rasa yang unik, favorit para pecinta pete sejati.</p>
+        </div>
+        <div class="variasi-item">
+          <div class="vi-icon">🌶️</div>
+          <h4>Nasi Goreng Jawa</h4>
+          <p>Lebih manis dengan tambahan kecap manis lebih banyak, serta irisan lombok hijau yang khas.</p>
+        </div>
+        <div class="variasi-item">
+          <div class="vi-icon">🍳</div>
+          <h4>Nasi Goreng Spesial</h4>
+          <p>Disajikan dengan telur mata sapi di atas, acar, kerupuk, dan emping sebagai pelengkap mewah.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer-logo">Nasi Goreng</p>
+    <p>Resep tradisional Indonesia yang tak lekang oleh waktu.</p>
+    <p style="margin-top:8px;">Selamat memasak &amp; menikmati! 🍽️</p>
+  </footer>
+
+  <script>
+    // Scroll reveal for steps
+    const steps = document.querySelectorAll('.step');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 100);
+        }
+      });
+    }, { threshold: 0.15 });
+    steps.forEach(s => observer.observe(s));
+  </script>
+
+</body>
+</html>
