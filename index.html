@@ -1,115 +1,447 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Etherthink</title>
-    <link rel="shortcut icon" href="assets/img/Etherthink.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
+    <title>Etehrthink — Masa Depan Pendidikan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Syne:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="Etherthink.ico" type="image/x-icon">
 </head>
-<body class="font-sans antialiased">
-    <!-- Header -->
-    <canvas id="neuron-canvas"></canvas>
-    <header>
-        <nav class="nav-container">
-            <div class="nav-left">
-                <img src="assets/img/Etherthink.ico" alt="Etherthink Logo" class="logo">
-                <h1>Etherthink</h1>
-            </div>
-            <button id="menu-toggle" class="menu-btn">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                </svg>
-            </button>
-            <ul class="nav-menu">
-                <!-- <li><a href="#home">Home</a></li> -->
-                <li><a href="https://www.youtube.com/channel/UCCdW5ISUbmNzFj6EOtr-DnQ" target="_blank" rel="noopener noreferrer">Youtube</a></li>
-                <li><a href="https://cujud.xyz" target="_blank">Owner's Porto</a></li>
-            </ul>
-        </nav>
-    </header>
-    <!-- end Header -->
+<body>
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
 
-    <!-- Hero Section with Neuron Animation and Feather Effect -->
-    <section id="home">
-        <div class="hero-content">
-            <h2>ETHERTHINK SYNERGY FRONTIER.</h2>
-            <p>"Ini bukan tentang siapa yang memulai duluan, tapi ini tentang siapa yang bertahan..."</p>
+    <!-- NAV -->
+    <nav>
+    <a href="#" class="nav-logo">
+        <img src="etherthink.png" alt="Etehrthink Logo" class="logo-img">
+    </a>
+    <ul class="nav-links">
+        <li><a href="#about">Tentang</a></li>
+        <li><a href="#courses">Konten</a></li>
+        <li><a href="#process">Cara Belajar</a></li>
+        <li><a href="#youtube">YouTube</a></li>
+    </ul>
+    <a href="https://youtube.com" target="_blank" class="nav-cta">Subscribe →</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+    <div class="hero-orb orb-1"></div>
+    <div class="hero-orb orb-2"></div>
+
+    <div class="hero-content">
+        <div class="hero-eyebrow">
+        <span class="eyebrow-line"></span>
+        <span>Channel di</span>
+        <div class="yt-badge"><span class="yt-dot"></span> YouTube</div>
+        <span class="eyebrow-line right"></span>
         </div>
-    </section>
-    <!-- end Hero Section with Neuron Animation and Feather Effect -->
 
-    <!-- About Section -->
-    <!-- <section id="about">
-        <img src="assets/img/erth-people" alt="">
-        <h2>About Etherthink</h2>
-        <p>Halo! Namaku Fikri, biasa di panggil Fikri juga sih. Aku seorang pelajar yang lagi belajar tentang dunia programming, khususnya web development. Aku suka banget ngulik teknologi baru dan aku juga seorang content creator di YouTube. Website ini, bakal aku jadikan tempat pencapain yang aku dapatkan dan mungkin beberapa cerita tentang perjalananku di dunia ini.
+        <h1 class="hero-title">
+        <span class="title-line-1">THINKING</span>
+        <span class="title-line-2" data-text="UNTIL FRONTIER">UNTIL FRONTIER</span>
+        </h1>
+
+        <p class="hero-sub">
+        Etehrthink hadir untuk merevolusi cara kamu belajar. Konten pendidikan mendalam, berbasis sains, dan dikemas dengan cara yang mengubah cara berpikirmu.
         </p>
-    </section> -->
-    <!-- end About Section -->
 
-    <!-- Timeline Section -->
-    <Section id="timelines">
-        <!-- <h2 id="text">Milestone Etherthink</h2> -->
-        <div class="timeline">
-            <div class="container left-container">
-                <img src="" alt="">
-                <div class="text-box">
-                    <h2>2024</h2>
-                    <small>The Beginning Arc</small>
-                    <p>Etherthink di buat pada tanggal 1 Januari 2024 oleh Fikri, alasan utama berdirinya itu karena dia ingin mencoba menuangkan sebuah karya ke dalam bentuk video.</p>
-                </div>
-            </div>
+        <div class="hero-actions">
+        <a href="https://youtube.com" target="_blank" class="btn-primary">
+            <span>▶</span> Tonton di YouTube
+        </a>
+        <a href="#courses" class="btn-ghost">
+            Lihat Konten ↓
+        </a>
         </div>
-        <div class="timeline">
-            <div class="container right-container">
-                <img src="" alt="">
-                <div class="text-box">
-                    <h2>2025</h2>
-                    <small>The Stubbornly Arc</small>
-                    <p>Dengan keras kepala, Etherthink ini terus berlanjut meskipun banyak rintangan yang dia hadapi. mencoba segala kemungkinan untuk tetap bertahan.</p>
-                </div>
-            </div>
-        </div>
-        <div class="timeline">
-            <div class="container left-container">
-                <img src="" alt="">
-                <div class="text-box">
-                    <h2>2026</h2>
-                    <small>The Until Frontier Arc</small>
-                    <p>Lakukan dengan perlahan tapi pasti, banyak yang memiliki mimpi besar, namun tidak semua bisa di wujudkan... hoki datang ke orang yang berani, BANZAII!!</p>
-                </div>
-            </div>
-        </div>
-        <div class="timeline">
-            <div class="container right-container">
-                <img src="" alt="">
-                <div class="text-box">
-                    <h2>20??</h2>
-                    <small>The ???</small>
-                    <p>???</p>
-                </div>
-            </div>
-        </div>
-    </Section>
-    <!-- end Timeline Section -->
 
-    <!-- Dream Section -->
-    <!-- <section class="dream">
-        <h2>The Dream Car</h2>
-        <div>
-            <img src="assets/img/McLaren-720S-Transparent-Background.png" alt="MCLaren">
-            <h3>McLaren 720s</h3>
+        <div class="hero-stats">
+        <div class="stat-item">
+            <span class="stat-num">10K+</span>
+            <span class="stat-label">Subscriber</span>
         </div>
-    </section> -->
-    <!-- end Dream Section -->
+        <div class="stat-item">
+            <span class="stat-num">30+</span>
+            <span class="stat-label">Video</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-num">4.9★</span>
+            <span class="stat-label">Rating</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-num">3+</span>
+            <span class="stat-label">Topik</span>
+        </div>
+        </div>
+    </div>
+    </section>
 
-    <!-- Footer -->
+    <!-- TICKER -->
+    <div class="ticker-wrap">
+    <div class="ticker-track" id="ticker">
+        <div class="ticker-item"><span>Critical Thinking</span> <span class="ticker-sep">◆</span> Ilmu Pengetahuan <span class="ticker-sep">◆</span> <span>Filsafat</span> <span class="ticker-sep">◆</span> Psikologi Kognitif <span class="ticker-sep">◆</span> <span>Matematika</span> <span class="ticker-sep">◆</span> Deep Learning <span class="ticker-sep">◆</span> <span>Neuroscience</span> <span class="ticker-sep">◆</span> Logika & Penalaran <span class="ticker-sep">◆</span> <span>Fisika Kuantum</span> <span class="ticker-sep">◆</span></div>
+        <div class="ticker-item"><span>Critical Thinking</span> <span class="ticker-sep">◆</span> Ilmu Pengetahuan <span class="ticker-sep">◆</span> <span>Filsafat</span> <span class="ticker-sep">◆</span> Psikologi Kognitif <span class="ticker-sep">◆</span> <span>Matematika</span> <span class="ticker-sep">◆</span> Deep Learning <span class="ticker-sep">◆</span> <span>Neuroscience</span> <span class="ticker-sep">◆</span> Logika & Penalaran <span class="ticker-sep">◆</span> <span>Fisika Kuantum</span> <span class="ticker-sep">◆</span></div>
+    </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+    <div class="about-grid reveal">
+        <div class="about-visual">
+        <div class="about-hexagon">
+            <div class="hex-ring"></div>
+            <div class="hex-ring"></div>
+            <div class="hex-ring"></div>
+            <div class="hex-core">
+            <img src="etherthink.png" alt="Etehrthink Logo" class="hex-logo">
+            <span class="hex-label">Etehrthink</span>
+            </div>
+        </div>
+        </div>
+        <div class="about-text">
+        <div class="section-header">
+            <div class="section-tag"><span class="tag-dash"></span>Tentang Kami</div>
+            <h2 class="section-title">Pendidikan yang<br>Menantang Batas</h2>
+        </div>
+        <p>
+            <strong>Etehrthink</strong> bukan sekadar channel YouTube biasa. Kami adalah gerakan pendidikan yang percaya bahwa setiap orang berhak mendapatkan akses ke pengetahuan berkualitas tinggi.
+        </p>
+        <p>
+            Kami menyajikan konten yang <strong>mendalam, terstruktur, dan menantang cara berpikirmu</strong> — dari sains hingga filsafat, dari matematika hingga psikologi kognitif.
+        </p>
+        <div class="about-features">
+            <div class="feature-row">
+            <div class="feature-icon">🧠</div>
+            <span class="feature-text">Konten berbasis riset ilmiah terkini</span>
+            </div>
+            <div class="feature-row">
+            <div class="feature-icon">⚡</div>
+            <span class="feature-text">Penjelasan kompleks dengan cara sederhana</span>
+            </div>
+            <div class="feature-row">
+            <div class="feature-icon">🔬</div>
+            <span class="feature-text">Disampaikan oleh para ahli di bidangnya</span>
+            </div>
+            <div class="feature-row">
+            <div class="feature-icon">🌐</div>
+            <span class="feature-text">100% gratis dan dapat diakses siapa saja</span>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- COURSES -->
+    <section class="courses" id="courses">
+    <div class="courses-inner">
+        <div class="section-header reveal">
+        <div class="section-tag"><span class="tag-dash"></span>Topik Unggulan</div>
+        <h2 class="section-title">Apa yang Akan Kamu<br>Pelajari</h2>
+        </div>
+        <div class="courses-grid reveal">
+        <div class="course-card featured">
+            <div class="course-num">// 001</div>
+            <div class="course-badge">🔥 Populer</div>
+            <h3 class="course-title">Cara Kerja Otak & Kognisi</h3>
+            <p class="course-desc">Memahami bagaimana otak memproses informasi, membentuk memori, dan cara mengoptimalkan kemampuan belajarmu secara ilmiah.</p>
+            <div class="course-meta"><span>32 Video</span> · <span>Neuroscience</span></div>
+        </div>
+        <div class="course-card">
+            <div class="course-num">// 002</div>
+            <div class="course-badge">💡 Trending</div>
+            <h3 class="course-title">Logika & Pemikiran Kritis</h3>
+            <p class="course-desc">Dari silogisme hingga logical fallacies. Latih cara berpikirmu agar lebih tajam dalam menganalisis argumen dan informasi.</p>
+            <div class="course-meta"><span>28 Video</span> · <span>Filsafat</span></div>
+        </div>
+        <div class="course-card">
+            <div class="course-num">// 003</div>
+            <div class="course-badge">⚛️ Baru</div>
+            <h3 class="course-title">Fisika Kuantum untuk Semua</h3>
+            <p class="course-desc">Menjelajahi alam semesta di skala subatomik. Superposisi, entanglement, dan misteri terbesar dalam fisika modern.</p>
+            <div class="course-meta"><span>20 Video</span> · <span>Fisika</span></div>
+        </div>
+        <div class="course-card">
+            <div class="course-num">// 004</div>
+            <div class="course-badge">📊 Series</div>
+            <h3 class="course-title">Matematika Asyik</h3>
+            <p class="course-desc">Membangun intuisi matematika yang kuat. Dari bilangan prima yang misterius hingga keindahan geometri fraktal.</p>
+            <div class="course-meta"><span>40 Video</span> · <span>Matematika</span></div>
+        </div>
+        <div class="course-card">
+            <div class="course-num">// 005</div>
+            <div class="course-badge">🧬 Featured</div>
+            <h3 class="course-title">Biologi Evolusi</h3>
+            <p class="course-desc">Perjalanan kehidupan selama 4 miliar tahun. Bagaimana seleksi alam membentuk setiap makhluk yang ada di bumi ini.</p>
+            <div class="course-meta"><span>25 Video</span> · <span>Biologi</span></div>
+        </div>
+        <div class="course-card">
+            <div class="course-num">// 006</div>
+            <div class="course-badge">🌍 Esensial</div>
+            <h3 class="course-title">Filsafat Kehidupan</h3>
+            <p class="course-desc">Pertanyaan terdalam manusia dijawab oleh para pemikir terbesar sepanjang sejarah. Dari Socrates hingga pemikiran kontemporer.</p>
+            <div class="course-meta"><span>35 Video</span> · <span>Filsafat</span></div>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process" id="process">
+    <div class="process-inner">
+        <div class="section-header reveal" style="text-align:center; max-width: 600px; margin: 0 auto 70px;">
+        <div class="section-tag" style="justify-content:center;"><span class="tag-dash"></span>Cara Belajar<span class="tag-dash" style="transform:scaleX(-1)"></span></div>
+        <h2 class="section-title">Sistem Belajar<br>Kami Berbeda</h2>
+        </div>
+        <div class="process-steps reveal">
+        <div class="step">
+            <div class="step-num">// STEP 01</div>
+            <div class="step-icon-wrap">🎯</div>
+            <h3 class="step-title">Pilih Topik</h3>
+            <p class="step-desc">Mulai dari topik yang paling membuatmu penasaran. Ikuti rasa ingin tahumu.</p>
+        </div>
+        <div class="step">
+            <div class="step-num">// STEP 02</div>
+            <div class="step-icon-wrap">📺</div>
+            <h3 class="step-title">Tonton Video</h3>
+            <p class="step-desc">Nikmati penjelasan mendalam yang disajikan secara visual dan interaktif di YouTube.</p>
+        </div>
+        <div class="step">
+            <div class="step-num">// STEP 03</div>
+            <div class="step-icon-wrap">🔄</div>
+            <h3 class="step-title">Hubungkan Ide</h3>
+            <p class="step-desc">Temukan koneksi antar konsep. Otak kamu akan membangun jaringan pengetahuan yang lebih kuat.</p>
+        </div>
+        <div class="step">
+            <div class="step-num">// STEP 04</div>
+            <div class="step-icon-wrap">🚀</div>
+            <h3 class="step-title">Terapkan & Bagikan</h3>
+            <p class="step-desc">Gunakan pola pikir barumu dalam kehidupan nyata dan sebarkan ke komunitasmu.</p>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- YOUTUBE -->
+    <section class="youtube" id="youtube">
+    <div class="youtube-inner">
+        <div class="yt-showcase reveal">
+        <div class="yt-player-mock">
+            <div class="yt-grid-lines"></div>
+            <div class="yt-play-btn">
+            <div class="play-circle">
+                <div class="play-triangle"></div>
+            </div>
+            <span class="yt-label">Tonton Sekarang</span>
+            </div>
+            <div class="yt-bar">
+            <div class="yt-progress"><div class="yt-progress-fill"></div></div>
+            <span class="yt-time">12:47 / 38:22</span>
+            </div>
+        </div>
+
+        <div class="yt-info">
+            <div class="section-tag"><span class="tag-dash"></span>YouTube Channel</div>
+            <div class="yt-sub-count">10K+</div>
+            <div class="yt-sub-label">Subscriber & Terus Bertambah</div>
+            <div class="yt-features">
+            <div class="yt-feat">Video baru setiap minggu</div>
+            <div class="yt-feat">Durasi mendalam 20-60 menit</div>
+            <div class="yt-feat">Subtitle bahasa Indonesia</div>
+            <div class="yt-feat">Gratis untuk semua</div>
+            <div class="yt-feat">Komunitas aktif di kolom komentar</div>
+            </div>
+            <a href="https://youtube.com" target="_blank" class="btn-primary" style="display:inline-flex; text-decoration:none;">
+            <span style="color:#ff4050; font-size:1.1rem">▶</span> Kunjungi Channel
+            </a>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+    <div class="testimonials-inner">
+        <div class="section-header reveal" style="text-align:center; max-width:600px; margin:0 auto 70px">
+        <div class="section-tag" style="justify-content:center"><span class="tag-dash"></span>Apa Kata Mereka</div>
+        <h2 class="section-title">Penonton Kami<br>Berbicara</h2>
+        </div>
+        <div class="testimonials-grid reveal">
+        <div class="testi-card">
+            <div class="testi-quote">"</div>
+            <p class="testi-text">Etehrthink bener-bener ngubah cara aku mikir. Sekarang aku lebih kritis dan nggak gampang percaya informasi tanpa bukti. Kontennya padat tapi gampang dicerna!</p>
+            <div class="testi-author">
+            <div class="testi-avatar">AR</div>
+            <div>
+                <div class="testi-name">Arya Ramadhan</div>
+                <div class="testi-role">Mahasiswa Teknik, Bandung</div>
+            </div>
+            </div>
+        </div>
+        <div class="testi-card">
+            <div class="testi-quote">"</div>
+            <p class="testi-text">Baru nemuin channel ini 3 bulan lalu dan udah nonton hampir semua videonya. Kualitas kontennya setara sama video-video edukasi internasional, tapi pakai bahasa kita sendiri.</p>
+            <div class="testi-author">
+            <div class="testi-avatar">SN</div>
+            <div>
+                <div class="testi-name">Sinta Nuraini</div>
+                <div class="testi-role">Guru SMA, Yogyakarta</div>
+            </div>
+            </div>
+        </div>
+        <div class="testi-card">
+            <div class="testi-quote">"</div>
+            <p class="testi-text">Sebagai orang yang kerja di riset, aku sangat menghargai cara Etehrthink menyampaikan konsep ilmiah yang akurat tanpa oversimplifikasi. Luar biasa!</p>
+            <div class="testi-author">
+            <div class="testi-avatar">DW</div>
+            <div>
+                <div class="testi-name">Dr. Dimas Wibowo</div>
+                <div class="testi-role">Peneliti, Jakarta</div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+    <div class="cta-inner reveal">
+        <div class="section-tag" style="justify-content:center; margin-bottom:30px"><span class="tag-dash"></span>Bergabung Sekarang</div>
+        <h2 class="cta-title">Siap Menjadi<br><span class="highlight">Pemikir Masa Depan?</span></h2>
+        <p class="cta-sub">Subscribe ke channel Etehrthink dan jadilah bagian dari komunitas yang haus akan pengetahuan. Konten baru setiap minggu, gratis selamanya.</p>
+        <div class="cta-actions">
+        <a href="https://youtube.com" target="_blank" class="btn-primary">
+            <span style="color:#ff4050">▶</span> Subscribe Gratis
+        </a>
+        <a href="#about" class="btn-ghost">Pelajari Lebih →</a>
+        </div>
+    </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2024 - 2026 Etherthink. All rights reserved.</p>
+    <div class="footer-grid">
+        <div class="footer-brand">
+        <a href="#" class="nav-logo">
+            <div class="logo-mark"></div>
+            ETEHRTHINK
+        </a>
+        <p class="footer-desc">Platform edukasi digital yang percaya bahwa pengetahuan berkualitas tinggi harus bisa diakses oleh semua orang, tanpa terkecuali.</p>
+        </div>
+        <div class="footer-col">
+        <h4>Konten</h4>
+        <ul>
+            <li><a href="#">Neuroscience</a></li>
+            <li><a href="#">Fisika</a></li>
+            <li><a href="#">Matematika</a></li>
+            <li><a href="#">Filsafat</a></li>
+            <li><a href="#">Biologi</a></li>
+        </ul>
+        </div>
+        <div class="footer-col">
+        <h4>Tentang</h4>
+        <ul>
+            <li><a href="#">Visi & Misi</a></li>
+            <li><a href="#">Tim Kami</a></li>
+            <li><a href="#">Kolaborasi</a></li>
+            <li><a href="#">Press Kit</a></li>
+        </ul>
+        </div>
+        <div class="footer-col">
+        <h4>Terhubung</h4>
+        <ul>
+            <li><a href="https://youtube.com" target="_blank">YouTube</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter / X</a></li>
+            <li><a href="#">Komunitas</a></li>
+        </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2025 Etehrthink. Semua Hak Dilindungi.</span>
+        <div class="status-dot">
+        <div class="dot"></div>
+        <span>Semua Sistem Aktif</span>
+        </div>
+        <span>Dibuat dengan 🧠 untuk Indonesia</span>
+    </div>
     </footer>
-    <!-- end Footer -->
 
-    <script src="js/script.js"></script>
+    <script>
+    // CURSOR
+    const dot = document.getElementById('cursorDot');
+    const ring = document.getElementById('cursorRing');
+    let mx = 0, my = 0, rx = 0, ry = 0;
+
+    document.addEventListener('mousemove', e => {
+        mx = e.clientX; my = e.clientY;
+        dot.style.left = mx + 'px';
+        dot.style.top = my + 'px';
+    });
+
+    function animRing() {
+        rx += (mx - rx) * 0.12;
+        ry += (my - ry) * 0.12;
+        ring.style.left = rx + 'px';
+        ring.style.top = ry + 'px';
+        requestAnimationFrame(animRing);
+    }
+    animRing();
+
+    document.querySelectorAll('a, button, .course-card, .testi-card, .step, .feature-row, .play-circle').forEach(el => {
+        el.addEventListener('mouseenter', () => ring.classList.add('hovered'));
+        el.addEventListener('mouseleave', () => ring.classList.remove('hovered'));
+    });
+
+    // SCROLL REVEAL
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+            entry.target.style.transitionDelay = (i * 0.1) + 's';
+            entry.target.classList.add('visible');
+        }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // COUNTER ANIMATION
+    function animateCounter(el, target, duration = 2000) {
+        let start = 0;
+        const step = timestamp => {
+        if (!start) start = timestamp;
+        const progress = Math.min((timestamp - start) / duration, 1);
+        const val = Math.floor(progress * target);
+        el.textContent = val.toLocaleString() + (el.dataset.suffix || '');
+        if (progress < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+    }
+
+    // TICKER DUPLICATE for seamless loop (already in HTML)
+
+    // SMOOTH NAV
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        });
+    });
+
+    // NAV scroll effect
+    window.addEventListener('scroll', () => {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 60) {
+        nav.style.background = 'rgba(2,13,10,0.97)';
+        } else {
+        nav.style.background = 'linear-gradient(180deg, rgba(2,13,10,0.95) 0%, transparent 100%)';
+        }
+    });
+    </script>
 </body>
 </html>
