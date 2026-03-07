@@ -1,9 +1,9 @@
- @font-face {
-        font-family: 'Vactory-sans';
-        src: url('/public/fonts/VactorySansRegular-drrAV.ttf') format('tff');
-        font-weight: normal;
-        font-style: normal;
-    }
+@font-face {
+    font-family: 'Vactory-sans';
+    src: url('/public/fonts/VactorySansRegular-drrAV.ttf') format('tff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 * {
     margin: 0;
